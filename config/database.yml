@@ -14,7 +14,7 @@ development:
   database: mysql_development
   pool: 5
   username: root
-  password:
+  password: hiro6502
   host: localhost
 
 # Warning: The database defined as "test" will be erased and

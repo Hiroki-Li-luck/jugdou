@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>みんなの投稿</h1>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-md-4">
+          <div class="card border border-dark" style="width: 18rem;">
+            <div class= "card-img-top" >
+              <figure class="image is-4by3">
+                <% if post.video.present? %>
+                  <%= link_to post.video_url.to_s do %>
+                    <%= video_tag(post.video.to_s, size: '200x300') %>
+                  <% end %>
+                <% else %>
+                  <%= image_tag 'no_image.jpg', size: '200x300' %>
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-body">
+              <div class="media">
+                <div class="media-left">
+                  <p class="card-text"><%= post.content %></p>
+                  <p class="card-text"><%= post.user.username %></p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p><%= link_to '詳細', post_path(post) %>
+                <% if current_user.id == post.user_id %>
+                  <%= link_to '編集', edit_post_path(post) %>
+                  <%= link_to '削除', post, method: :delete, data: { confirm: '本当によろしいですか?' } %></p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

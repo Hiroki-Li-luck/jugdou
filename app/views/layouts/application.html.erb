@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Jugdou</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto navbar-dark alert alert-info" role="alert">
+        <div class="inner fixed-top">
+          <h2 class="masthead-brand">ジャグ動</h2>
+          <nav class="nav nav-masthead justify-content-center">
+            <% if user_signed_in? %> 
+              <strong><%= link_to 'マイページ', page_path(current_user) %></strong>
+              <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
+              <%= link_to '投稿ページ', new_post_path, class: "nav-link" %>
+              <%= link_to 'みんなの投稿', posts_path, class: "nav-link" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <% else %>
+              <%= link_to 'サインアップ', new_user_registration_path, class: "nav-link" %>
+              <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+            <% end %>
+          </nav>
+        </div>
+      </header>
+      
+      <main role="main" class="inner cover">    
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <div class="container">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

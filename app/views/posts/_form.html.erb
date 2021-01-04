@@ -15,10 +15,16 @@
     <%= f.text_field :content, autofocus: true, autocomplete: "content" %>
   </div>
 
-  <div class="field">
-    <%= f.label :video, "ビデオ" %>
-    <%= f.file_field :video, :accept => 'video/*'%>
-  </div>
+    <div class="field">
+      <%= f.label :video, "ビデオ" %>
+      <div class="bg-danger">
+        <p>投稿動画のサイズは5メガバイトまでです。</p>
+      </div>
+      <section class="section">
+        <%= f.file_field :video, :accept => 'video/*'%>
+      </section>
+    </div>
+  
 
   <div class="actions">
     <%= f.submit "投稿" %>

@@ -20,7 +20,9 @@
   
   <div class="field">
     <%= f.label :profile_image_id, "プロフィール画像" %><br />
-    <%= f.file_field :profile_image_id, autofocus: true, autocomplete: "profile_image_id" %>
+    <section class="section">
+      <%= f.file_field :profile_image_id, autofocus: true, autocomplete: "profile_image_id" %>
+    </section>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

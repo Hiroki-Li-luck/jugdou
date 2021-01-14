@@ -4,7 +4,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   def size_range
-    1..5.megabytes
+    1..10.megabytes
   end
 
   # Choose what kind of storage to use for this uploader:

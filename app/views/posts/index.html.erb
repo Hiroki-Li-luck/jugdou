@@ -23,7 +23,7 @@
               <div class="media">
                 <div class="media-left">
                   <p class="card-text"><%= post.content %></p>
-                  <p class="card-text"><%= post.user.username %></p>
+                  <p class="card-text"><%= link_to post.user.username , page_path(post.user) %></p>
                 </div>
               </div>
               <div class="text-right">

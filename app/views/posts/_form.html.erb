@@ -12,13 +12,13 @@
   <% end %>
   <div class="field">
     <%= f.label :content, "コンテンツ" %><br />
-    <%= f.text_field :content, autofocus: true, autocomplete: "content" %>
+    <%= f.text_area :content, autofocus: true, autocomplete: "content" %>
   </div>
 
     <div class="field">
-      <%= f.label :video, "ビデオ" %>
+      <%= f.label :video, "ビデオ(ドラッグ&ドロップで添付可能)" %>
       <div class="bg-danger">
-        <p>投稿動画のサイズは5メガバイトまでです。</p>
+        <p>投稿動画のサイズは10メガバイトまでです。</p>
       </div>
       <section class="section">
         <%= f.file_field :video, :accept => 'video/*'%>

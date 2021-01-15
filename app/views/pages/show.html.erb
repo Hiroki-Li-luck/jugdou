@@ -1,6 +1,5 @@
 <img src =<%= @user.profile_image_id %> class = "icon_image">
 <p><%= @user.username %></p>
-<p>ユーザーページ</p>
 <p><%= @user.profile %></p>
 
 <h3>自分の投稿</h3>
@@ -8,9 +7,9 @@
     <div class="container">
       <div class="row">
         <% @posts.each do |post| %>
-          <div class="col-md-4">
-            <div class="card border border-dark" style="width: 18rem;">
-              <% if post.user_id == @user.id %>
+          <% if post.user_id == @user.id %>
+            <div class="col-md-4">
+              <div class="card border border-dark" style="width: 18rem;">
                 <div class= "card-img-top" >
                   <figure class="image is-4by3">
                     <% if post.video.present? %>
@@ -37,9 +36,9 @@
                     <% end %>
                   </div>
                 </div>
-              <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

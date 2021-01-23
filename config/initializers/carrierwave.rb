@@ -3,7 +3,7 @@ unless Rails.env.development? || Rails.env.test?
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: 'AKIAJPPHSF26XJS7QCYQ',
-      aws_secret_access_key: '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',
+      aws_secret_access_key: '',
       region: 'ap-northeast-1'
     }
 

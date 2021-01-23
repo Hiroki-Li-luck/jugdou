@@ -47,7 +47,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 # for uploader with AWS S3
-gem 'fog'
+gem 'fog-aws'
 
 gem 'mini_magick'
 gem 'devise'

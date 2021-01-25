@@ -7,6 +7,7 @@ unless Rails.env.development? || Rails.env.test?
       region: 'ap-northeast-1'
     }
 
+    
     config.fog_directory  = 'jugdou'
     config.cache_storage = :fog
   end

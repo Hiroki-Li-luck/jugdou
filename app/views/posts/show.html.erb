@@ -12,15 +12,32 @@
 
 <p><%= @post.user.username %></p>
 
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.text_field :content %>
-  <%= f.submit "コメント" %>
-<% end %>
+<section class="section">
+  <tr class="container">
+    <%= form_for [@post, @comment] do |f| %>
+      <%= f.text_field :content %>
+      <%= f.submit "コメント" %>
+    <% end %>
 
-<% @comments.each do |comment| %>
-  <%= comment.content %>
-  <%= comment.user.username %>
-<% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th class="text-center">Content</th>
+        <th class="text-center">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @comments.each do |comment| %>
+        <tr>
+          <th scope="row"><%= comment.id %></th>
+          <td><%= comment.content %></td>
+          <td><%= comment.user.username %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
 
 <% if current_user.id == @post.user_id %>
   <%= link_to '編集', edit_post_path(@post) %>

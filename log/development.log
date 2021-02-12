@@ -12066,3 +12066,249 @@ Processing by PagesController#index as HTML
 Completed 200 OK in 190ms (Views: 188.4ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2021-02-12 19:56:33 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 1[0m
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 1533ms (Views: 1507.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-02-12 19:56:37 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 311ms (Views: 306.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-02-12 19:56:49 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"++QxTu58Q/JxT/Fd2SXj1/3pXI71t5MF14M7ALJS3Mr8Eo3+6i5Rb4x7FJS0uv9kHJiX694CglEI4JV/uiJSZw==", "user"=>{"username"=>"hiroki", "email"=>"ddd@uuu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'ddd@uuu' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 237ms (ActiveRecord: 0.7ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"++QxTu58Q/JxT/Fd2SXj1/3pXI71t5MF14M7ALJS3Mr8Eo3+6i5Rb4x7FJS0uv9kHJiX694CglEI4JV/uiJSZw==", "user"=>{"username"=>"hiroki", "email"=>"ddd@uuu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 389ms (Views: 182.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-02-12 19:56:54 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLDwd9gZmpIIkrS0Rp0s1+cLRhaLclo45I707f/HF06tInTvSYYjaWg/mIsV+34xDBPA6rYhaUENSqCnINL/eQ==", "user"=>{"username"=>"hiroki", "email"=>"ddd@uuu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'ddd@uuu' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 217ms (ActiveRecord: 0.5ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zLDwd9gZmpIIkrS0Rp0s1+cLRhaLclo45I707f/HF06tInTvSYYjaWg/mIsV+34xDBPA6rYhaUENSqCnINL/eQ==", "user"=>{"username"=>"hiroki", "email"=>"ddd@uuu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 381ms (Views: 173.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-02-12 19:57:27 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/3jkssYhSzUnuJd8OLyRb1wfzgJSCr91nqk0fCxsMy+e6mAqV77yzkcVu0Nr2sOJtwdI/m9ZjAx3bWA283nbGA==", "user"=>{"username"=>"hiroki", "email"=>"aaa@g", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aaa@g' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/pages/1
+Completed 302 Found in 222ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/1" for ::1 at 2021-02-12 19:57:27 +0900
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering pages/show.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/show.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 228ms (Views: 211.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 19:57:32 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 250ms (Views: 216.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 19:58:23 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 305ms (Views: 299.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:00:20 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 294ms (Views: 289.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:03:50 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 286ms (Views: 281.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:05:47 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 292ms (Views: 287.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:07:11 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 293ms (Views: 288.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:08:33 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 287ms (Views: 281.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:10:07 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 291ms (Views: 284.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:13:54 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 260ms (Views: 253.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:14:09 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 197ms (Views: 191.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pages/1" for ::1 at 2021-02-12 20:14:26 +0900
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering pages/show.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts`[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pages/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 225ms (Views: 220.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-12 20:15:56 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 298ms (Views: 292.4ms | ActiveRecord: 1.5ms)
+
+

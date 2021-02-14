@@ -22,7 +22,6 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Number</th>
         <th class="text-center">Content</th>
         <th class="text-center">Name</th>
       </tr>
@@ -30,7 +29,6 @@
     <tbody>
       <% @comments.each do |comment| %>
         <tr>
-          <th scope="row"><%= comment.id %></th>
           <td><%= comment.content %></td>
           <td><%= comment.user.username %></td>
         </tr>
